@@ -1,8 +1,10 @@
 package com.tam.pop.repository;
 
 import com.tam.pop.model.Admin;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+@Repository
 
 public class AdminRepoInterfaceImpl implements AdminRepositoryInterface{
     @Override
