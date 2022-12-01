@@ -11,6 +11,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     AdminRepositoryInterface repositoryInterface;
+
+    public UserDetailsServiceImpl(AdminRepositoryInterface repositoryInterface) {
+        this.repositoryInterface = repositoryInterface;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Admin user = repositoryInterface.findByUserName(username);
@@ -24,10 +29,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         String role = null;
         switch (roleId) {
             case 1:
-                role = "ROLE_SUPER";
+                role = "ADMIN";
                 break;
             case 2:
-                role = "ROLE_ADMIN";
+                role = "USER";
                 break;
 
         }
