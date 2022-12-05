@@ -1,5 +1,6 @@
 package com.tam.pop.service;
 
+import com.tam.pop.dto.UserDto;
 import com.tam.pop.model.User;
 import com.tam.pop.repository.UserRepoInterfaceImpl;
 import com.tam.pop.repository.UserRepositoryInterface;
@@ -13,12 +14,17 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepositoryInterface repoInterface;
 
+    @Override
+    public User save(User user) {
+        return null;
+    }
+
     public Optional<User> findById(Integer id){
         return repoInterface.findById(id);
     }
 
-    public User save(User user){
-        return repoInterface.save(user);
-    }
+//    public UserDto save(UserDto user){
+//        return repoInterface.save(user);
+//    }
 
 }
